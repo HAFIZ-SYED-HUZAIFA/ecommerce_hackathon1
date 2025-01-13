@@ -1,5 +1,6 @@
 import React from 'react' 
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Trendingproduct = () => {
 
@@ -48,12 +49,17 @@ const productData1 = [
         <div className='grid grid-cols-4 gap-14 items-center justify-center below-1200:grid-cols-1'>
             {/* map function */}
             {productData1.map((product, index) => (
-            <div key={index} className='max-w-[270px] h-[350px] shadow-[0px_8px_40px_0px_#F5F6F8]'>
+            <div key={index} className='max-w-[270px] h-[350px] shadow-[0px_8px_40px_0px_#F5F6F8] transform transition-transform duration-300 hover:scale-105'>
             {/* Top section for image */}
-            <div className='bg-[#F5F6F8] w-[247px] h-[244px] flex items-center justify-center'>
+            <div className='bg-[#F5F6F8] w-[247px] h-[244px] flex items-center justify-center flex-col'>
                 <Image src={product.imageSrc} alt="trendingchair"  width={parseInt(product.width)} 
                   height={parseInt(product.height)}></Image>
             </div>
+            <div className="flex items-center justify-center opacity-0 hover:opacity-100 duration-200 mt-[-30px]">
+                 <Link href="/shops/grid"><button className="bg-[#08D15F] text-white text-[12px] font-josefin leading-3 px-3 py-2 mt-[-2px] rounded-[2px] hover:bg-[#028e4c] duration-200">
+                    View Shop
+                  </button></Link>
+                </div>
             {/* bottom section */}
             <div className=' flex flex-col items-center justify-center gap-2 mt-4'>
              <p className='font-lato font-bold text-[16px] text-[#151875]'>{product.title}</p>
@@ -70,7 +76,7 @@ const productData1 = [
             {/* Image 1 div */}
             <div className='bg-[#FFF6FB] w-[420px] h-[270px] below-500:w-[260px]'>
             <div className='relative top-6 left-6'>
-            <span className='font-josefin font-semibold text-[26px] text-[#151875] below-500:text-[20px]'>23% off in all products<p className='font-semibold text-[#FB2E86] text-[16px] font-lato underline'>Shop Now</p></span>
+            <span className='font-josefin font-semibold text-[26px] text-[#151875] below-500:text-[20px]'>23% off in all products<Link href="/shops/grid"><p className='font-semibold text-[#FB2E86] text-[16px] font-lato underline'>Shop Now</p></Link></span>
             </div>
             <div className='flex items-end justify-end'>
             <Image src="/trendingproducts/trendingproduct-5.png" alt="trendingproduct" width={1000} height={1000} className='w-[217px] h-[207px]'></Image>

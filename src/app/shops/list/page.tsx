@@ -5,38 +5,110 @@ import { IoGrid } from "react-icons/io5";
 import { BsCart2 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaSearchPlus } from "react-icons/fa";
+import Link from 'next/link';
 
 const page = () => {
 
 const shoplist = [
-    {
-        imageSrc: "/shop/Rectangle 32.png",
-        title: "Accumsan tincidunt",
-    },
-    {
-        imageSrc: "/shop/Rectangle 32 (1).png",
-        title: "In nulla",
-    },
-    {
-        imageSrc: "/shop/Rectangle 32 (2).png",
-        title: "Vel sem",
-    },
-    {
-        imageSrc: "/shop/Rectangle 32 (3).png",
-        title: "Porttitor cum",
-    },
-    {
-        imageSrc: "/shop/Rectangle 32 (4).png",
-        title: "Nunc in",
-    },
-    {
-        imageSrc: "/shop/Rectangle 32 (5).png",
-        title: "Vitae facilisis",
-    },
-    {
-        imageSrc: "/shop/Rectangle 32 (6).png",
-        title: "Curabitur lectus",
-    },
+  {
+    id: 13,
+    imageSrc: "/shop/Rectangle 32.png",
+    title: "Accumsan tincidunt",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 14,
+    imageSrc: "/shop/Rectangle 32 (1).png",
+    title: "In nulla",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 15,
+    imageSrc: "/shop/Rectangle 32 (2).png",
+    title: "Vel sem",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 16,
+    imageSrc: "/shop/Rectangle 32 (3).png",
+    title: "Porttitor cum",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 17,
+    imageSrc: "/shop/Rectangle 32 (4).png",
+    title: "Nunc in",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 18,
+    imageSrc: "/shop/Rectangle 32 (5).png",
+    title: "Vitae facilisis",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 19,
+    imageSrc: "/shop/Rectangle 32 (6).png",
+    title: "Curabitur lectus",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 20,
+    imageSrc: "/shop/shop11.jpeg",
+    title: "Dictum morbi",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 21,
+    imageSrc: "/shop/Rectangle 32 (7).png",
+    title: "Sodales sit",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 22,
+    imageSrc: "/shop/Rectangle 32 (8).png",
+    title: "Nibh varius",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 23,
+    imageSrc: "/shop/Rectangle 32 (9).png",
+    title: "Mauris quis",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 24,
+    imageSrc: "/shop/Rectangle 32 (10).png",
+    title: "Morbi sagittis",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 25,
+    imageSrc: "/shop/Rectangle 32 (11).png",
+    title: "Ultricies venenatis",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  {
+    id: 26,
+    imageSrc: "/shop/Rectangle 32 (12).png",
+    title: "Scelerisque dignissim",
+    discount: "$52.00",
+    price: "$26.00",
+  },
+  
 ]
   return (
     <div>
@@ -98,13 +170,9 @@ const shoplist = [
         <label htmlFor="per-view-input" className="text-[16px] font-lato font-normal text-[#3F509E]">
           View:
         </label>
-        <IoGrid className="w-[12px] h-[12px] text-[#151875]" />
-        <FaList className="w-[12px] h-[12px] text-[#151875]" />
-        <input
-          type="text"
-          id="per-view-input"
-          className="w-[162px] h-[30px] border-[1px] border-[#E7E6EF] focus:outline-none rounded-[2px]"
-        />
+        <span className="flex items-center gap-2 justify-center text-[#151875]"><Link href="/shops/grid"><IoGrid className="w-[12px] h-[12px] text-[#151875]" /></Link>Grid</span>
+        <Link href="/shops/list" className="flex items-center gap-2 justify-center text-[#151875]"><FaList className="w-[12px] h-[12px] text-[#151875]" />List</Link>
+
       </div>
     </div>
   </div>
@@ -134,9 +202,9 @@ const shoplist = [
           </div>
           <div>
             <span className="text-[#111C85] text-[15.46px] flex gap-2 below-1200:justify-center font-josefin">
-              $26.00
+              {shop.price}
               <span className="text-[#FF2AAA] text-[15.46px] line-through font-josefin">
-                $52.00
+                {shop.discount}
               </span>
             </span>
           </div>
@@ -147,7 +215,7 @@ const shoplist = [
           <div className="flex gap-10 below-1200:justify-center">
             <BsCart2 className="text-[#535399] w-[20.98px] h-[20.98px]" />
             <IoMdHeartEmpty className="text-[#535399] w-[19.88px] h-[19.88px]" />
-            <FaSearchPlus className="text-[#535399] w-[17.67px] h-[17.67px]" />
+            <Link href={`/productdetail/${shop.id}`}><FaSearchPlus className="text-[#535399] w-[17.67px] h-[17.67px]" /></Link>
           </div>
         </div>
       </div>

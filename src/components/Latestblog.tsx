@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Latestblog = () => {
   const productData = [
@@ -41,14 +42,14 @@ const Latestblog = () => {
           {productData.map((item, index) => (
             <div key={index} className='w-[370px] h-auto flex flex-col items-center justify-center shadow-[0px_8px_40px_0px_#F5F6F8] below-1300:w-[280px] below-500:w-[90%]'>
               <Image src={item.imageSrc} alt="blog1" width={370} height={255} className='rounded-[8px] below-1300:w-[280px] below-500:w-full'></Image>
-              <div className='mt-4 flex flex-col gap-4 w-[90%]'>
+              <div className='mt-4 flex flex-col gap-4 w-[90%] mb-4'>
                 <div className='flex gap-7 ml-2 below-500:flex-col below-500:gap-2'>
                   <span className='flex gap-1 text-[#151875] text-[14px] font-josefin font-normal below-500:text-[12px]'><Image src="/latestblog/Vector (2).png" alt="icon" width={1000} height={1000} className='w-3 h-3 mt-1'></Image>{item.name}</span>
                   <span className='flex gap-1 font-josefin text-[14px] text-[#151875] font-normal below-500:text-[12px]'><Image src="/latestblog/uil_calendar-alt.png" alt="calendar" width={1000} height={1000} className='w-3 h-3 mt-1'></Image>{item.date}</span>
                 </div>
                 <h2 className='ml-4 font-josefin text-[18px] text-[#151875] font-bold hover:text-[#FB2E86] below-500:text-[16px]'>{item.title}</h2>
                 <p className='ml-4 text-[16px] font-lato text-[#72718F] leading-[30px] below-500:text-[14px] below-500:leading-[24px]'>{item.paragraph}</p>
-                <span className='ml-4 text-[16px] font-lato font-normal text-[#151875] underline hover:text-[#FB2E86] below-500:text-[14px]'>{item.readmore}</span>
+                <Link href="/blog"><span className='ml-4 text-[16px] font-lato font-normal text-[#151875] underline hover:text-[#FB2E86] below-500:text-[14px]'>{item.readmore}</span></Link>
               </div>
             </div>
           ))}

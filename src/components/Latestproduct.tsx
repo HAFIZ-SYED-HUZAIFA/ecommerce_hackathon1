@@ -3,41 +3,42 @@ import Image from 'next/image'
 import { BsCart2 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaSearchPlus } from "react-icons/fa";
+import Link from 'next/link';
 
 const Latestproduct = () => {
 
   const productDetail = [
-    {
+    { id:31,
       imageSrc: "/latestproduct/sofa1.png",
       title: "Comfort Handy Craft",
       discount: "$65.00",
       price: "$42.00",
     },
-    {
+    { id:32,
       imageSrc: "/latestproduct/sofa-2.0.png",
       title: "Comfort Handy Craft",
       discount: "$65.00",
       price: "$42.00",
     },
-    {
+    { id:33,
       imageSrc: "/latestproduct/sofa-3.png",
       title: "Comfort Handy Craft",
       discount: "$65.00",
       price: "$42.00",
     },
-    {
+    { id:34,
       imageSrc: "/latestproduct/sofa-4.png",
       title: "Comfort Handy Craft",
       discount: "$65.00",
       price: "$42.00",
     },
-    {
+    { id:35,
       imageSrc: "/latestproduct/sofa-5.png",
       title: "Comfort Handy Craft",
       discount: "$65.00",
       price: "$42.00",
     },
-    {
+    { id:36,
       imageSrc: "/latestproduct/sofa-6.png",
       title: "Comfort Handy Craft",
       discount: "$65.00",
@@ -66,7 +67,7 @@ const Latestproduct = () => {
         <div className="grid grid-cols-3 gap-9 gap-y-28 justify-items-center items-center below-1200:grid-cols-1">
           {/* map function */}
           {productDetail.map((product, index) => (
-            <div key={index} className="h-[306px] max-w-[360px] below-500:w-[280px]">
+            <div key={index} className="h-[306px] max-w-[360px] below-500:w-[280px] transform transition-transform duration-300 hover:scale-105">
               {/* top section */}
               <div className='w-[360px] h-[269.96px] bg-[#F7F7F7] hover:bg-white below-500:max-w-[360px] below-500:w-[280px]'>
                 {/* Sale img */}
@@ -83,7 +84,7 @@ const Latestproduct = () => {
                     <FaRegHeart className="text-[#1389FF] hover:text-[#2F1AC4] hover:duration-200" />
                   </div>
                   <div className="relative w-[30px] h-[30px] bg-transparent rounded-full flex items-center justify-center hover:bg-[#EEEFFB] hover:duration-200">
-                    <FaSearchPlus className="text-[#1389FF] hover:text-[#2F1AC4] hover:duration-200" />
+                    <Link href={`/productdetail/${product.id}`}><FaSearchPlus className="text-[#1389FF] hover:text-[#2F1AC4] hover:duration-200" /></Link>
                   </div>
                 </div>
                 {/* sofa image */}
@@ -99,6 +100,12 @@ const Latestproduct = () => {
                   <span className='font-josefin line-through text-[#FB2448] text-[12px]'>{product.discount}</span>
                 </p>
               </div>
+
+              <div className="flex items-center justify-center opacity-0 hover:opacity-100 duration-200 mt-3">
+                 <Link href="/shops/grid"><button className="bg-[#08D15F] text-white text-[12px] font-josefin leading-3 px-3 py-2 mt-[-2px] rounded-[2px] hover:bg-[#028e4c] duration-200">
+                    View Shop
+                  </button></Link>
+                </div>
             </div>
           ))}
         </div>

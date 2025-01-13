@@ -1,5 +1,6 @@
 import React from 'react' 
 import Image from 'next/image'
+import Link from 'next/link';
 
 const Uniquefeature = () => {
   return (
@@ -31,7 +32,7 @@ const Uniquefeature = () => {
           <p className='w-[352px] h-[21px] font-lato font-medium text-[#ACABC3] tracking-[1.5%] text-[16px] leading-[21.12px] below-600:w-[290px]'>Arms, backs and seats are structurally reinforced</p>
         </div>
         <div className='flex gap-5 mt-7 below-600:flex-col'>
-        <button className='bg-[#FB2E86] rounded-[2px] px-10 py-3 text-[#FFFFFF] text-[17px] font-josefin tracking-[2%] below-600:text-center'>Add To Cart</button>
+        <Link href="/shops/grid"><button className='bg-[#FB2E86] rounded-[2px] px-10 py-3 text-[#FFFFFF] text-[17px] font-josefin tracking-[2%] below-600:text-center'>Shop Now</button></Link>
         <p className='flex flex-col below-600:text-center font-josefin text-[#151875] tracking-[2%] text-[14px] font-bold'>B&B Italian Sofa <span className='text-[14px] text-[#151875] font-normal'>$32.00</span></p>
         </div>
       </div>
