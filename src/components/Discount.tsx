@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 
 const Discount = () => {
   return (
@@ -32,7 +33,7 @@ const Discount = () => {
         </div>
         </div>
         <div className='below-600:flex below-600:items-center below-600:justify-center'>
-        <button className="bg-[#FB2E86] text-white tracking-[2%] font-josefin text-[17px] w-[200px] h-[57px] rounded-[2px] hover:bg-[#E02D8D] focus:outline-none">Shop Now</button>
+        <Link href="/shops/grid"><button className="bg-[#FB2E86] text-white tracking-[2%] font-josefin text-[17px] w-[200px] h-[57px] rounded-[2px] hover:bg-[#E02D8D] focus:outline-none">Shop Now</button></Link>
         </div>
         </div>
         {/* Right section */}

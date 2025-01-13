@@ -38,7 +38,7 @@ const Topbar = () => {
           <span className="flex text-[#F1F1F1] font-josefin font-semibold text-[14px] leading-4 items-center">
             Wishlist<IoMdHeartEmpty className="ml-[3px]" />
           </span>
-          <BsCart2 className="text-[#F1F1F1] text-[18px] mt-[-6px]" />
+          <Link href="/cart"><BsCart2 className="text-[#F1F1F1] text-[18px] mt-[-6px]" /></Link>
         </div>
       </div>
     </div>
